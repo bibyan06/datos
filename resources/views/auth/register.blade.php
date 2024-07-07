@@ -12,117 +12,121 @@
     <div class="register-container mx-auto p-4 pt-6 md:p-6 lg:p-12">
         <div class="flex flex-wrap -mx-4">
             <div class="w-full md:w-1/2 xl:w-1/2 p-6 bg-blue-400">
-                <img src="{{ asset('images/login-image.png') }}" alt="Right Image" class="w-full h-full object-cover">
+                <img src="{{ asset('images/login-image.png') }}" alt="Left Image" class="w-full h-full object-cover">
             </div>
             <div class="w-full md:w-1/2 xl:w-1/2 p-4">
-                <!-- <x-authentication-card>
-                    <x-slot name="logo">
-                        <x-authentication-card-logo />
-                    </x-slot> -->
-
-                    <x-validation-errors class="mb-4" />
-
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-            <div class="form-container">
-            <h1>CREATE ACCOUNT</h1>
-                <div>
-                    <x-label for="last_name" value="{{ __('Last Name') }}" />
-                    <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required autofocus autocomplete="last_name" />
-                </div>
-
-                <div class="mt-4">
-                    <x-label for="first_name" value="{{ __('First Name') }}" />
-                    <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="first_name" />
-                </div>
-
-                <div class="mt-4">
-                    <x-label for="middle_name" value="{{ __('Middle Name') }}" />
-                    <x-input id="middle_name" class="block mt-1 w-full" type="text" name="middle_name" :value="old('middle_name')" required autofocus autocomplete="middle_name" />
-                </div>
-
-                <div class="mt-4">
-                    <x-label for="age" value="{{ __('Age') }}" />
-                    <x-input id="age" class="block mt-1 w-full" type="number" name="age" :value="old('age')" required autofocus autocomplete="age" />
-                </div>
-
-                <div class="mt-4">
-                    <x-label for="gender" value="{{ __('Gender') }}" />
-                    <select id="gender" class="block mt-1 w-full" name="gender" required>
-                        <option value="">Select Gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                </div>
-
-                <div class="mt-4">
-                    <x-label for="home_address" value="{{ __('Home Address') }}" />
-                    <x-input id="home_address" class="block mt-1 w-full" type="text" name="home_address" :value="old('home_address')" required autofocus autocomplete="home_address" />
-                </div>
-
-                <div class="mt-4">
-                    <x-label for="phone_number" value="{{ __('Phone Number') }}" />
-                    <x-input id="phone_number" class="block mt-1 w-full" type="tel" name="phone_number" :value="old('phone_number')" required autofocus autocomplete="phone_number" />
-                </div>
-
-                <div class="mt-4">
-                    <x-label for="employee_id" value="{{ __('Employee ID') }}" />
-                    <x-input id="employee_id" class="block mt-1 w-full" type="text" name="employee_id" :value="old('employee_id')" required autofocus autocomplete="employee_id" />
-                </div>
-
-                <div class="mt-4">
-                    <x-label for="email" value="{{ __('Email') }}" />
-                    <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="email" />
-                </div>
-
-                <div class="mt-4">
-                    <x-label for="username" value="{{ __('Username') }}" />
-                    <x-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus autocomplete="username" />
-                </div>
-
-                <div class="mt-4">
-                    <x-label for="password" value="{{ __('Password') }}" />
-                    <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-                    <span class="show-password" onclick="togglePasswordVisibility()">
-                        <i class="fas fa-eye" id="eye-icon"></i>
-                    </span>
-                </div>
-
-                <div class="mt-4">
-                    <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                    <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-                </div>
-            </div>
-            
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-label for="terms">
-                        <div class="flex items-center">
-                            <x-checkbox name="terms" id="terms" required />
-
-                            <div class="ms-2">
-                               {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Privacy Policy').'</a>',
-                                ])!!}
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+                    <div class="form-container">
+                        <h1 class="text-center font-bold text-2xl">CREATE ACCOUNT</h1>
+                        <div class="mt-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900">Last Name</label>
+                                    <input type="text" id="last_name" name="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                </div>
+                                <div>
+                                    <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900">First Name</label>
+                                    <input type="text" id="first_name" name="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                </div>
                             </div>
                         </div>
-                    </x-label>
-                </div>
-            @endif
 
+                        <div class="mt-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label for="middle_name" class="block mb-2 text-sm font-medium text-gray-900">Middle Name</label>
+                                    <input type="text" id="middle_name" name="middle_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                </div>
+                                <div>
+                                    <label for="age" class="block mb-2 text-sm font-medium text-gray-900">Age</label>
+                                    <input type="number" id="age" name="age" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"  required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                <label for="gender" class="block mb-2 text-sm font-medium text-gray-900">Gender</label>
+                                <select id="gender" name="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                                </div>
+                                <div>
+                                    <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
+                                    <input type="tel" id="phone_number" name="phone_number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div  class="mt-4">
+                            <label for="home_address" class="block mb-2 text-sm font-medium text-gray-900">Home Address</label>
+                            <input type="text" id="home_address" name="home_address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                        </div>
+
+                        <div class="mt-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label for="employee_id" class="block mb-2 text-sm font-medium text-gray-900">Employee ID</label>
+                                    <input type="text" id="employee_id" name="employee_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"  required>
+                                </div>
+                                <div>
+                                    <label for="username" class="block mb-2 text-sm font-medium text-gray-900">Username</label>
+                                    <input type="text" id="username" name="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
+                            <input type="email" id="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"  required>
+                        </div>
+
+                        <div class="mt-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
+                                    <input type="password" id="password" name="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                    <span class="show-password" onclick="togglePasswordVisibility()">
+                                    <i class="fas fa-eye" id="eye-icon"></i>
+                                    </span>
+                                </div>
+                                <div>
+                                    <label for="password_confirmation" class="block mb-2 text-sm font-medium text-gray-900">Confirm Password</label>
+                                    <input type="password" id="password_confirmation" name="password_confirmation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                            
+                        @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
+                            <div class="mt-4">
+                                <label for="terms" class="block mb-2 text-sm font-medium text-gray-900">
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="terms" name="terms" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" required>
+                                        <span class="ms-2">
+                                            {!! __('I agree to the :terms_of_service and :privacy_policy', [
+                                                    'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Terms of Service').'</a>',
+                                                    'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Privacy Policy').'</a>',
+                                            ])!!}
+                                        </span>
+                                    </div>
+                                </label>
+                            </div>
+                        @endif
                         <div class="flex items-center justify-end mt-4">
                             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                                 {{ __('Already registered?') }}
                             </a>
-
-                            <x-button class="ms-4">
+                            <button type="submit" class="inline-flex items-center px-4 py-2 bg-blue-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 active:bg-blue-900 focus:outline-none focus:border-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-25 transition ease-in-out duration-150 ms-4">
                                 {{ __('CREATE') }}
-                            </x-button>
+                            </button>
                         </div>
-                    </form>
-                </x-authentication-card>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -130,7 +134,6 @@
 
 </body>
 </html>
-
 
 <script>
     function togglePasswordVisibility() {
