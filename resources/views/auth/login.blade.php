@@ -1,4 +1,5 @@
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
@@ -15,8 +16,10 @@
                 </div>
                 <div class="password-input">
                     <label for="password" class="block text-sm font-bold mb-2">Password</label>
-                    <input class="password-input" type="password" id="password" name="password" class="w-full pl-10 text-sm text-gray-700" required>
-                    <span class="eye-icon" onclick="togglePasswordVisibility()"></i></span>
+                    <input type="password" id="password" name="password">
+                    <span class="show-password" onclick="togglePasswordVisibility()">
+                        <i class="fas fa-eye-slash" id="eye-icon"></i>
+                    </span>
                 </div>
                 <div class="flex items-center justify-between mb-4">
                     <label for="remember" class="flex items-center">
@@ -37,14 +40,20 @@
 
 <script>
   function togglePasswordVisibility() {
-    var passwordInput = document.getElementById("password");
-    if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        // You might want to change the eye icon to a closed one here
+    const passwordInput = document.getElementById('password');
+    const eyeIcon = document.getElementById('eye-icon');
+
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.classList.add('fa-eye');
+        eyeIcon.classList.remove('fa-eye-slash');
+       
     } else {
-        passwordInput.type = "password";
-        // Change the eye icon to an open one here
+        passwordInput.type = 'password';
+        eyeIcon.classList.add('fa-eye-slash');
+        eyeIcon.classList.remove('fa-eye');
+        
     }
-  }
+ }
 </script>
 
