@@ -15,10 +15,10 @@
                 <img src="{{ asset('images/login-image.png') }}" alt="Right Image" class="w-full h-full object-cover">
             </div>
             <div class="w-full md:w-1/2 xl:w-1/2 p-4">
-                <x-authentication-card>
+                <!-- <x-authentication-card>
                     <x-slot name="logo">
                         <x-authentication-card-logo />
-                    </x-slot>
+                    </x-slot> -->
 
                     <x-validation-errors class="mb-4" />
 
