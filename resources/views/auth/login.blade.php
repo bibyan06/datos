@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
 <x-guest-layout>
@@ -25,7 +25,7 @@
                     </label>
                     <a href="{{ route('password.request') }}" class="text-sm text-gray-500 hover:text-gray-900">Forgot Password?</a>
                 </div>
-                <button type="submit" class="hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">Log In</button>
+                <button type="submit" class=" text-white font-bold py-2 px-4 rounded w-full">Log In</button>
                 <div class="account-link">Don't have an account? <a href="{{ route('register') }}"class="text-blue-500 hover:text-blue-700">Create Account</a></div>
             </form>
         </div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password</title>
-    <link rel="stylesheet" href="{{ mix('css/forgot-password.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/forgot-password.css') }}">
 </head>
 <body>
     <x-guest-layout>
@@ -12,14 +12,14 @@
             <div class="w-full md:w-1/2 xl:w-1/2 p-6">
                 <div class="form-container">
                     <h1>RESET PASSWORD</h1>
-                    <p>Kindly enter your valid email address correctly to receive a recovery link</p>
+                    <p style="text-align:center;">Kindly enter your valid email address correctly to receive a recovery link</p>
                     <form method="POST" action="{{ route('password.email') }}">
                         @csrf
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email">Email Address</label>
                             <input type="email" name="email" id="email" required>
                         </div>
-                        <button type="submit">Send Password Reset Link</button>
+                        <button type="submit">Verify</button>
                     </form>
                     <div class="links">
                         <a href="{{ route('login') }}">Back to Login</a>
