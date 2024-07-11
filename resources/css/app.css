@@ -52,7 +52,8 @@ body {
   
   .logo {
     text-align: center;
-    width: 13rem;
+    width: 12rem;
+    margin: 0 auto; 
   }
   
   .account-link {
@@ -88,8 +89,11 @@ body {
     border-radius: 4px;
     cursor: pointer;
     width: 10rem;
-    display:block;
+    display:flex;
+    justify-content: center;
+    margin: 0 auto;
   }
+ 
   
   button[type="submit"]:hover {
     background-color: #1845A2;
@@ -150,6 +154,7 @@ body {
   input[type="password"] {
     padding-right: 30px; /* Make room for the eye icon */
   }
+
   #eye-icon {
     font-size: 18px;
     margin-top: 27px;

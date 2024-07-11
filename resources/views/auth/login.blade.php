@@ -21,7 +21,7 @@
                         <i class="fas fa-eye-slash" id="eye-icon"></i>
                     </span>
                 </div>
-                <div class="flex items-center justify-between mb-4">
+                <div style="margin-bottom: 2rem;" class="flex items-center justify-between mb-4">
                     <label for="remember" class="flex items-center">
                         <input type="checkbox" id="remember" name="remember" class="mr-2">
                         <span class="text-sm text-gray-600">Remember me</span>
